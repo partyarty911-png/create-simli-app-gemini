@@ -23,10 +23,10 @@ export const avatar = {
 
   // Prebuilt Gemini voices: https://aistudio.google.com/docs/speech-generation#voices
   // (listen to them at https://aistudio.google.com/live). Two to start with:
-  //   "Kore" - female (firm)
-  //   "Puck" - male (upbeat)
-  // Match the voice to the face: the default face is a woman, so Kore.
-  gemini_voice: "Kore",
+  //   Female: "Sulafat" (warm), "Leda" (youthful), "Despina" (smooth)
+  //   Male: "Achird" (friendly), "Enceladus" (breathy)
+  // Match the voice to the face: the default face is a woman, so Sulafat.
+  gemini_voice: "Sulafat",
 
   initialPrompt:
     "You are a helpful AI assistant, shown to the user as a video avatar. " +

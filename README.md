@@ -72,7 +72,7 @@ Other scripts: `npm run build`, `npm start`, `npm run lint`, `npm run typecheck`
 ## Customize the avatar
 
 - **Prompt, voice, model:** edit `app/avatar.ts` (server-only).
-  The default model is [`gemini-3.8-live`](https://aistudio.google.com/docs/models/gemini-3.8-live), Google's default Live model, which is free of charge on the free tier. Voices are Gemini's [prebuilt voices](https://aistudio.google.com/docs/speech-generation#voices) (listen in [AI Studio](https://aistudio.google.com/live)); for example `Kore` (female) and `Puck` (male). Match the voice to the face: the default face is a woman, so the default voice is `Kore`.
+  The default model is [`gemini-3.8-live`](https://aistudio.google.com/docs/models/gemini-3.8-live), Google's default Live model, which is free of charge on the free tier. Voices are Gemini's [prebuilt voices](https://aistudio.google.com/docs/speech-generation#voices) (listen in [AI Studio](https://aistudio.google.com/live)); we recommend `Sulafat`, `Leda` or `Despina` for female faces and `Achird` or `Enceladus` for male faces. Match the voice to the face: the default face is a woman, so the default voice is `Sulafat`.
 - **Face:** set `SIMLI_FACE_ID`. Use one of your own avatars (dashboard → Your Avatars) or a [preset face](https://docs.simli.com/api-reference/preset-faces):
 
   | Preset | Face ID |
