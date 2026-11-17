@@ -2,11 +2,15 @@ import "server-only";
 
 export const isProduction = process.env.NODE_ENV === "production";
 
-/** Hard cap for one conversation, in seconds. Applied to Simli (maxSessionLength) and OpenAI (server hang-up). */
+/**
+ * Hard cap for one conversation, in seconds. Applied to Simli (maxSessionLength) and to
+ * Gemini (the ephemeral token's expireTime). Gemini Live connections last about 10 minutes
+ * anyway (it sends goAway first), so 600 is also the longest a single connection runs.
+ */
 export const SESSION_MAX_SECONDS = 600;
 /** Simli ends the session after this many seconds without audio. */
 export const SIMLI_MAX_IDLE_SECONDS = 180;
-/** Timeout for every request this server makes to Simli or OpenAI. */
+/** Timeout for every request this server makes to Simli or Google. */
 export const UPSTREAM_TIMEOUT_MS = 10_000;
 
 /** Thrown when the server is missing configuration. Its message names the variable, so only show it in development. */

@@ -4,8 +4,8 @@ import "server-only";
  * Customize your avatar here.
  *
  * This file is server-only: the API routes read it when they mint session
- * tokens, so the browser can't change the prompt, voice or model. Only `name`
- * is passed to the page for display.
+ * tokens, and the Gemini token is locked to this model, voice and prompt, so the
+ * browser can't change them. Only `name` is passed to the page for display.
  *
  * The avatar's face is set with SIMLI_FACE_ID in .env.local (default: Simli's
  * default Trinity-2 face, a woman, so the voice is a female one). If you change
@@ -14,13 +14,19 @@ import "server-only";
 export const avatar = {
   name: "Assistant",
 
-  // OpenAI Realtime model. "gpt-realtime-2.1-mini" is cheaper and faster.
-  openai_model: "gpt-realtime-2.1",
+  // Gemini Live API model (native audio in, native audio out).
+  // "gemini-3.8-live" is Google's default Live model for voice agents, and it is
+  // free of charge on the free tier (a Google AI Studio key, no billing account).
+  // Model: https://aistudio.google.com/docs/models/gemini-3.8-live
+  // Pricing and free tier: https://aistudio.google.com/docs/pricing#gemini-3.8-live
+  gemini_model: "gemini-3.8-live",
 
-  // Built-in voices: alloy, ash, ballad, coral, echo, sage, shimmer, verse, marin, cedar.
-  // OpenAI recommends marin (female) and cedar (male) for best quality.
-  // Match the voice to the face: the default face is a woman, so marin.
-  openai_voice: "marin",
+  // Prebuilt Gemini voices: https://aistudio.google.com/docs/speech-generation#voices
+  // (listen to them at https://aistudio.google.com/live). Two to start with:
+  //   "Kore" - female (firm)
+  //   "Puck" - male (upbeat)
+  // Match the voice to the face: the default face is a woman, so Kore.
+  gemini_voice: "Kore",
 
   initialPrompt:
     "You are a helpful AI assistant, shown to the user as a video avatar. " +

@@ -36,12 +36,11 @@ export async function POST() {
     faceId,
     // Hard caps enforced by Simli: a forgotten tab can't bill for long.
     maxSessionLength: SESSION_MAX_SECONDS,
-    // Seconds without audio. Note: a continuous WebRTC track carries silence
-    // frames, so this may never fire while the OpenAI call is connected.
+    // Seconds without audio sent to Simli: ends the session if the conversation goes quiet.
     maxIdleTime: SIMLI_MAX_IDLE_SECONDS,
-    // The OpenAI voice arrives as a live WebRTC track (listenToMediastreamTrack),
-    // which already contains its own silence, so Simli must not add gap filling.
-    handleSilence: false,
+    // Gemini's voice arrives in bursts (sendAudioData, only while the model speaks),
+    // so Simli fills the gaps between them to keep the avatar moving naturally.
+    handleSilence: true,
     // 16:9 video (Trinity-2's full frame), matching the aspect-video player in app/Components/VideoBox.tsx.
     // For a square layout use 768x768 and set the player to aspect-square.
     streaming_width: 1366,

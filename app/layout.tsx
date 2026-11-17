@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Simli App",
-  description: "create-simli-app (OpenAI): an OpenAI Realtime voice agent with a Simli avatar",
+  description: "create-simli-app (Gemini): a Gemini Live API voice agent with a Simli avatar",
 };
 
 export default function RootLayout({

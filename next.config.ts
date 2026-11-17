@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const securityHeaders = [
   // Only this site may frame the app (clickjacking protection). No connect-src
-  // here on purpose: Simli and OpenAI media/signaling hosts vary.
+  // here on purpose: Simli media/signaling hosts vary (Gemini is wss://generativelanguage.googleapis.com).
   { key: "Content-Security-Policy", value: "frame-ancestors 'self'" },
   { key: "Permissions-Policy", value: "microphone=(self), camera=()" },
   { key: "X-Content-Type-Options", value: "nosniff" },

@@ -1,8 +1,8 @@
 import { avatar } from "./avatar";
 import SimliHeaderLogo from "./Components/Logo";
-import SimliOpenAI from "./SimliOpenAI";
+import SimliGemini from "./SimliGemini";
 
-const REPO_URL = "https://github.com/simliai/create-simli-app-openai";
+const REPO_URL = "https://github.com/simliai/create-simli-app-gemini";
 
 const links = [
   { href: "https://docs.simli.com", label: "Docs" },
@@ -28,12 +28,12 @@ export default function Demo() {
 
       <main className="flex-1 w-full max-w-[1100px] mx-auto flex flex-col items-center px-6 pb-12">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold leading-tight">Talk to OpenAI Realtime</h1>
+          <h1 className="text-2xl font-bold leading-tight">Talk to Gemini Live</h1>
           <p className="text-gray-400 mt-2">A real-time Simli avatar speaks the model&apos;s replies.</p>
         </div>
 
         <div className="w-full max-w-[960px]">
-          <SimliOpenAI avatarName={avatar.name} />
+          <SimliGemini avatarName={avatar.name} />
         </div>
 
         <section className="w-full max-w-[960px] mt-12 rounded-lg border border-white/10 p-6 text-gray-300">
@@ -42,7 +42,7 @@ export default function Demo() {
             <li>
               <span className="block text-white mb-1">1. Add your keys</span>
               Copy <code className="font-abc-repro-mono text-xs">.env.example</code> to{" "}
-              <code className="font-abc-repro-mono text-xs">.env.local</code> and add your Simli and OpenAI API keys.
+              <code className="font-abc-repro-mono text-xs">.env.local</code> and add your Simli API key and a free Gemini API key from Google AI Studio.
             </li>
             <li>
               <span className="block text-white mb-1">2. Start it</span>
