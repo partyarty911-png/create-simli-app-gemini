@@ -12,8 +12,7 @@ import "server-only";
  * the face, change the name and voice to match.
  */
 export const avatar = {
-  name: "Assistant",
-
+  name: "Sara",
   // Gemini Live API model (native audio in, native audio out).
   // "gemini-3.8-live" is Google's default Live model for voice agents, and it is
   // free of charge on the free tier (a Google AI Studio key, no billing account).
